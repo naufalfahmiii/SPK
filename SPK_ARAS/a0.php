@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
 
-$kriteria = ['processor', 'ram', 'strg', 'layar', 'harga'];
+$kriteria = ['processor', 'ram', 'tipe_storage', 'kapasitas_storage', 'harga'];
 $bobotData = $conn->query("SELECT * FROM bobot");
 
 $bobot = [];

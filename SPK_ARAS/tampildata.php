@@ -26,8 +26,8 @@
               <th>Nama</th>
               <th>Processor</th>
               <th>RAM</th>
-              <th>Storage</th>
-              <th>Layar</th>
+              <th>Tipe Storage</th>
+              <th>Kapasitas Storage</th>
               <th>Harga</th>
             </tr>
           </thead>
@@ -42,8 +42,8 @@
                 echo "<td>" . htmlspecialchars($row['nama']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['processor']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['ram']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['strg']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['layar']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['tipe_storage']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['kapasitas_storage']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['harga']) . "</td>";
                 echo "</tr>";
               }
@@ -68,7 +68,11 @@
           </thead>
           <tbody>
             <?php
-            $data = $conn->query("SELECT * FROM bobot");
+            $data = $conn->query("
+              SELECT * FROM bobot 
+              ORDER BY FIELD(kriteria, 'processor', 'ram', 'tipe_storage', 'kapasitas_storage', 'harga')
+            ");
+
             if ($data->num_rows > 0) {
               $no = 1;
               while ($row = $data->fetch_assoc()) {

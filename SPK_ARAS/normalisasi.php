@@ -2,7 +2,7 @@
 include 'koneksi.php';
 
 $A0 = $_POST['A0'];
-$kriteria = ['processor', 'ram', 'strg', 'layar', 'harga'];
+$kriteria = ['processor', 'ram', 'tipe_storage', 'kapasitas_storage', 'harga'];
 $data = $conn->query("SELECT * FROM alternatif");
 $alternatif = [];
 while ($row = $data->fetch_assoc()) $alternatif[] = $row;

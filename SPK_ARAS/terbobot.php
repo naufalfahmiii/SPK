@@ -4,7 +4,7 @@ include 'koneksi.php';
 $normal = json_decode($_POST['normal'], true);
 $a0 = json_decode($_POST['a0'], true);
 
-$kriteria = ['processor', 'ram', 'strg', 'layar', 'harga'];
+$kriteria = ['processor', 'ram', 'tipe_storage', 'kapasitas_storage', 'harga'];
 
 // bobot dari database
 $bobotData = $conn->query("SELECT * FROM bobot");
