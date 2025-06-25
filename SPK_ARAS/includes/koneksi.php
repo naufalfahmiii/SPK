@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "db_aras";
+$db = "dss_aras";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
